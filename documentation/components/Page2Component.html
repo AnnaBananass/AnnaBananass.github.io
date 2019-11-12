@@ -125,11 +125,9 @@
                                 <a href="#dataService">dataService</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
                                 <a href="#saveButton1">saveButton1</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
                                 <a href="#user">user</a>
                             </li>
                         </ul>
@@ -366,7 +364,6 @@
                         <a name="saveButton1"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Private</span>
                             saveButton1</b>
                             <a href="#saveButton1"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -393,7 +390,6 @@
                         <a name="user"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Private</span>
                             user</b>
                             <a href="#user"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -435,9 +431,9 @@ import { User } from &#x27;../../models/user&#x27;;
 /* Component Class Holder */
 export class Page2Component {
 
-    private user: User;
+    user: User;
 
-    private saveButton1&#x3D;false;
+    saveButton1&#x3D;false;
 
     constructor(public dataService: CaseDataService) {
       this.user &#x3D; this.dataService.getCase().user;

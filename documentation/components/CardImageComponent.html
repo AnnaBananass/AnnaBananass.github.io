@@ -583,16 +583,16 @@ onSave() {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- 
-
 This is an sample page to illustrate, each new &quot;page&quot; will have a new folder for instance &quot;startsida&quot;, &quot;upload image&quot; and so on 
 --&gt;
-&lt;div class&#x3D;&quot;row&quot;&gt;
+&lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-top:30px&quot;&gt;
     &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
         &lt;div class&#x3D;&quot;card&quot;&gt;
             &lt;div class&#x3D;&quot;card-header&quot;&gt;
-                &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Titel&lt;/h5&gt;
+                &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Ladda upp bild&lt;/h5&gt;
                 &lt;p class&#x3D;&quot;card-description&quot;&gt;Beskrivning&lt;/p&gt;
             &lt;/div&gt;
+            
             &lt;div class&#x3D;&quot;card-body&quot;&gt;
                 &lt;section&gt;
                    
@@ -605,16 +605,14 @@ This is an sample page to illustrate, each new &quot;page&quot; will have a new 
       
             &lt;/div&gt;
        
-            
-           
-                &lt;div class&#x3D;&quot;update ml-auto mr-auto btn-on-card&quot;&gt;
-                    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-info  btn-round&quot;  (click)&#x3D;&quot;onSave()&quot; &gt;
-                        &lt;i class&#x3D;&quot;nc-icon circle-icon nc-ruler-pencil&quot;&gt;&lt;/i&gt;
-                        &lt;input style&#x3D;&quot;display: none&quot; type&#x3D;&quot;file&quot; (change)&#x3D;&quot;onFileUpload($event)&quot; class&#x3D;&quot;upload-input&quot; #selectFile&gt;
-                        &lt;span [hidden]&#x3D;&quot;!imagesAvailable&quot;&gt;Ladda upp bild&lt;/span&gt;
-                        &lt;span [hidden]&#x3D;&quot;imagesAvailable&quot;&gt;Välj bild&lt;/span&gt;
-                    &lt;/button&gt;
-                &lt;/div&gt;
+            &lt;div class&#x3D;&quot;card-footer ml-auto mr-auto btn-on-card&quot;&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-info  btn-round&quot;  (click)&#x3D;&quot;onSave()&quot; &gt;
+                    &lt;i class&#x3D;&quot;nc-icon circle-icon nc-ruler-pencil&quot;&gt;&lt;/i&gt;
+                    &lt;input style&#x3D;&quot;display: none&quot; type&#x3D;&quot;file&quot; (change)&#x3D;&quot;onFileUpload($event)&quot; class&#x3D;&quot;upload-input&quot; #selectFile&gt;
+                    &lt;span [hidden]&#x3D;&quot;!imagesAvailable&quot;&gt;Ladda upp bild&lt;/span&gt;
+                    &lt;span [hidden]&#x3D;&quot;imagesAvailable&quot;&gt;Välj bild&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
 
         &lt;/div&gt;
     &lt;/div&gt;
@@ -653,7 +651,7 @@ This is an sample page to illustrate, each new &quot;page&quot; will have a new 
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- This is an sample page to illustrate, each new "page" will have a new folder for instance "startsida", "upload image" and so on --><div class="row">    <div class="col-md-12">        <div class="card">            <div class="card-header">                <h5 class="card-title">Titel</h5>                <p class="card-description">Beskrivning</p>            </div>            <div class="card-body">                <section>                                       <div class="images" >                        <div class="images-list" *ngIf="imagePreview"></div>                        <img [src]="imagePreview">                        </div>                                    </section>                  </div>                                              <div class="update ml-auto mr-auto btn-on-card">                    <button type="submit" class="btn btn-info  btn-round"  (click)="onSave()" >                        <i class="nc-icon circle-icon nc-ruler-pencil"></i>                        <input style="display: none" type="file" (change)="onFileUpload($event)" class="upload-input" #selectFile>                        <span [hidden]="!imagesAvailable">Ladda upp bild</span>                        <span [hidden]="imagesAvailable">Välj bild</span>                    </button>                </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- This is an sample page to illustrate, each new "page" will have a new folder for instance "startsida", "upload image" and so on --><div class="row" style="margin-top:30px">    <div class="col-md-12">        <div class="card">            <div class="card-header">                <h5 class="card-title">Ladda upp bild</h5>                <p class="card-description">Beskrivning</p>            </div>                        <div class="card-body">                <section>                                       <div class="images" >                        <div class="images-list" *ngIf="imagePreview"></div>                        <img [src]="imagePreview">                        </div>                                    </section>                  </div>                   <div class="card-footer ml-auto mr-auto btn-on-card">                <button type="submit" class="btn btn-info  btn-round"  (click)="onSave()" >                    <i class="nc-icon circle-icon nc-ruler-pencil"></i>                    <input style="display: none" type="file" (change)="onFileUpload($event)" class="upload-input" #selectFile>                    <span [hidden]="!imagesAvailable">Ladda upp bild</span>                    <span [hidden]="imagesAvailable">Välj bild</span>                </button>            </div>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'Page2Component', 'selector': 'page2'},{'name': 'PageComponent', 'selector': 'page'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CardImageComponent'};

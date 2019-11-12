@@ -130,7 +130,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
                                 <a href="#case">case</a>
                             </li>
                             <li>
@@ -277,7 +276,6 @@
                         <a name="case"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Private</span>
                             case</b>
                             <a href="#case"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -371,10 +369,10 @@ import { Case } from &#x27;../../../models/case&#x27;;
 
 export class CardDefaultComponent implements OnInit {
 
-  private case: Case;
+  case: Case;
  imagePreview: any;
 
-  constructor(public dataService: CaseDataService) { 
+  constructor(public dataService: CaseDataService) {
     this.case &#x3D; this.dataService.getCase();
   console.log(this.case.randomtest);
     const reader &#x3D; new FileReader();
@@ -382,7 +380,7 @@ export class CardDefaultComponent implements OnInit {
     this.imagePreview &#x3D; reader.result;
     };
     reader.readAsDataURL(this.dataService.getCase().images[0].file);
-  
+
 }
 
   ngOnInit() {

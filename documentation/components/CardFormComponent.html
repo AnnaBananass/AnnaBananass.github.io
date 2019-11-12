@@ -141,11 +141,9 @@
                                 <a href="#phoneExp">phoneExp</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
                                 <a href="#saveButton1">saveButton1</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
                                 <a href="#user">user</a>
                             </li>
                             <li>
@@ -473,7 +471,6 @@
                         <a name="saveButton1"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Private</span>
                             saveButton1</b>
                             <a href="#saveButton1"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -500,7 +497,6 @@
                         <a name="user"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Private</span>
                             user</b>
                             <a href="#user"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -647,8 +643,8 @@ import { FormControl, Validators, FormGroup, ValidatorFn, AbstractControl } from
 /* Component Class Holder */
 export class CardFormComponent implements OnInit {
 
-    private user: User; 
-    
+    user: User;
+
     private card_content &#x3D; &#x60;                    &lt;div class&#x3D;&quot;col-md-12 px-1&quot;&gt;
                         
                         &lt;div class&#x3D;&quot;form-group editable card-form&quot;&gt;
@@ -666,12 +662,12 @@ export class CardFormComponent implements OnInit {
 
                     &lt;/div&gt;&#x60;;
 
-    private saveButton1&#x3D;false;
+    saveButton1&#x3D;false;
 
-    constructor(public dataService: CaseDataService) { 
-       
+    constructor(public dataService: CaseDataService) {
+
     this.user &#x3D; this.dataService.getCase().user;
-        
+
     }
 
     phoneExp &#x3D;  new RegExp(&#x27;^(010 | 011 | 0120 | 0121 | 0122 | 0123 | 0125 | 013 | 0140 | 0141 | 0142 | 0143 | 0144 | 0150 | 0151 | 0152 | 0155 | 0156 | 0157 | 0158 | 0159 | 016 | 0171 | 0173 | 0174 | 0175 | 0176 | 018 | 019 | 020 | 021 | 0220 | 0221 | 0222 | 0223 | 0224 | 0225 | 0226 | 0227 | 023 | 0240 | 0241 | 0243 | 0246 | 0247 | 0248 | 0250 | 0251 | 0253 | 0258 | 026 | 0270 | 0271 | 0278 | 0280 | 0281 | 0290 | 0291 | 0292 | 0293 | 0294 | 0295 | 0297 | 0300 | 0301 | 0302 | 0303 | 0304 | 031 | 0320 | 0321 | 0322 | 0325 | 033 | 0340 | 0345 | 0346 | 035 | 036 | 0370 | 0371 | 0372 | 0380 | 0381 | 0382 | 0383 | 0390 | 0392 | 0393 | 040 | 0410 | 0411 | 0413 | 0414 | 0415 | 0416 | 0417 | 0418 | 042 | 0430 | 0431 | 0433 | 0435 | 044 | 0451 | 0454 | 0455 | 0456 | 0457 | 0459 | 046 | 0470 | 0471 | 0472 | 0474 | 0476 | 0477 | 0478 | 0479 | 0480 | 0481 | 0485 | 0486 | 0490 | 0491 | 0492 | 0493 | 0494 | 0495 | 0496 | 0498 | 0499 | 0500 | 0501 | 0502 | 0503 | 0504 | 0505 | 0506 | 0510 | 0511 | 0512 | 0513 | 0514 | 0515 | 0520 | 0521 | 0522 | 0523 | 0524 | 0525 | 0526 | 0528 | 0530 | 0531 | 0532 | 0533 | 0534 | 054 | 0550 | 0551 | 0552 | 0553 | 0554 | 0555 | 0560 | 0563 | 0564 | 0565 | 0570 | 0571 | 0573 | 0580 | 0581 | 0582 | 0583 | 0584 | 0585 | 0586 | 0587 | 0589 | 0590 | 0591 | 060 | 0611 | 0612 | 0613 | 0620 | 0621 | 0622 | 0623 | 0624 | 063 | 0640 | 0642 | 0643 | 0644 | 0645 | 0647 | 0650 | 0651 | 0652 | 0653 | 0657 | 0660 | 0661 | 0662 | 0663 | 0670 | 0671 | 0672 | 0680 | 0682 | 0684 | 0687 | 0690 | 0691 | 0692 | 0693 | 0695 | 0696 | 070 | 0710 | 0719 | 74 | 075 | 771 | 078 | 79 | 08 | 0900 | 090 | 0910 | 0911 | 0912 | 0913 | 0914 | 0915 | 0916 | 0918 | 0920 | 0921 | 0922 | 0923 | 0924 | 0925 | 0926 | 0927 | 0928 | 0929 | 0930 | 0932 | 0933 | 0934 | 0935 | 0940 | 0941 | 0942 | 0943 | 0950 | 0951 | 0952 | 0953 | 0954 | 0960 | 0961 | 0970 | 0971 | 0973 | 0975 | 0976 | 0977 | 0978 | 0980 | 0981 | 072 | 073 | 076 | 079 | 077 | 0939 | 0944 | 099 |)[0-9]{4,8}&#x27;);
@@ -696,21 +692,21 @@ export class CardFormComponent implements OnInit {
     get phone() {
         return this.userForm.get(&#x27;phone&#x27;)
     }
-    
-    onSave($event){    
+
+    onSave($event){
         this.saveButton1 &#x3D; !$event;
         this.dataService.getCase().user &#x3D; this.user;
-            
+
         if (this.saveButton1) {
             console.log(&quot;Open the form&quot;, $event);
-            
-            
-            
+
+
+
         }else{
-            console.log(&quot;Save the form data&quot;, $event);  
+            console.log(&quot;Save the form data&quot;, $event);
         }
-    } 
-    
+    }
+
 }
 
 export function phoneValidator(phone : RegExp) : ValidatorFn {
@@ -737,8 +733,8 @@ export function phoneValidator(phone : RegExp) : ValidatorFn {
     &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
         &lt;div class&#x3D;&quot;card&quot;&gt;
             &lt;div class&#x3D;&quot;card-header&quot;&gt;
-                &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Titel&lt;/h5&gt;
-                &lt;p class&#x3D;&quot;card-description&quot;&gt;Beskrivning&lt;/p&gt;
+                &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Kontaktuppgifter&lt;/h5&gt;
+                &lt;p class&#x3D;&quot;card-description&quot;&gt;Beskrivning...&lt;/p&gt;
             &lt;/div&gt;
 
             &lt;form [formGroup]&#x3D;&quot;userForm&quot;&gt;
@@ -789,15 +785,15 @@ export function phoneValidator(phone : RegExp) : ValidatorFn {
         
                 &lt;/div&gt;
                     
-                &lt;div class&#x3D;&quot;card-footer update ml-auto mr-auto btn-on-card&quot;&gt;
+
+            &lt;/form&gt;
+                                &lt;div class&#x3D;&quot;card-footer update ml-auto mr-auto btn-on-card&quot;&gt;
                     &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-info  btn-round&quot; (click)&#x3D;&quot;onSave(saveButton1)&quot;  &gt;
                         &lt;i class&#x3D;&quot;nc-icon circle-icon nc-ruler-pencil&quot;&gt;&lt;/i&gt;
                         &lt;span [hidden]&#x3D;&quot;saveButton1&quot;&gt;Redigera&lt;/span&gt;
                         &lt;span [hidden]&#x3D;&quot;!saveButton1&quot;&gt;Spara&lt;/span&gt;
                     &lt;/button&gt;
                 &lt;/div&gt;
-            &lt;/form&gt;
-                
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
@@ -841,7 +837,7 @@ export function phoneValidator(phone : RegExp) : ValidatorFn {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--  * Card Form View File, used for the registration of contact details * @version 1.0 * @author Alexander Anserud <alean378@student.liu.se>--><div class="row">    <div class="col-md-12">        <div class="card">            <div class="card-header">                <h5 class="card-title">Titel</h5>                <p class="card-description">Beskrivning</p>            </div>            <form [formGroup]="userForm">                <div class="card-body">                    <section>                        <div class="col-md-12 px-1">                            <div class="form-group editable card-form">                                <label>Namn</label>                                <p [hidden]="saveButton1">{{user.name}}</p>                                <input id="name" formControlName="name" [hidden]="!saveButton1" type="text" class="form-control" placeholder="Ditt namn" [(ngModel)]="user.name" value="{{user.name}}" required>                                <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">                                    <div *ngIf="name.errors.required">                                        Name is required.                                    </div>                                    <div *ngIf="name.errors.minlength">                                        Name must be at least 4 characters long.                                    </div>                                </div>                                <label>Email</label>                                <p [hidden]="saveButton1">{{user.email}}</p>                                <input id="email" formControlName="email" [hidden]="!saveButton1" type="text" class="form-control" placeholder="Email" [(ngModel)]="user.email" value="{{user.email}}" required>                                <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">                                    <div *ngIf="email.errors.required">                                        Email is required.                                    </div>                                    <div *ngIf="email.errors.email">                                        Email must be a valid email address.                                    </div>                                </div>                                                                <label>Telefon</label>                                <p [hidden]="saveButton1">{{user.phone}}</p>                                <input id="phone" formControlName="phone" [hidden]="!saveButton1" type="text" class="form-control" placeholder="Telefon" [(ngModel)]="user.phone" value="{{user.phone}}" required>                                <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">                                    <div *ngIf="phone.errors.required">                                        Phone number is required.                                    </div>                                    <div *ngIf="phone.errors.phoneError">                                        Invalid phone number.                                    </div>                                </div>                            </div>                                                    </div>                    </section>                        </div>                                    <div class="card-footer update ml-auto mr-auto btn-on-card">                    <button type="submit" class="btn btn-info  btn-round" (click)="onSave(saveButton1)"  >                        <i class="nc-icon circle-icon nc-ruler-pencil"></i>                        <span [hidden]="saveButton1">Redigera</span>                        <span [hidden]="!saveButton1">Spara</span>                    </button>                </div>            </form>                        </div>    </div></div><!-- <label>    Name:    <input type="text" [formControl]="nameControl">  </label> --></div>'
+        var COMPONENT_TEMPLATE = '<div><!--  * Card Form View File, used for the registration of contact details * @version 1.0 * @author Alexander Anserud <alean378@student.liu.se>--><div class="row">    <div class="col-md-12">        <div class="card">            <div class="card-header">                <h5 class="card-title">Kontaktuppgifter</h5>                <p class="card-description">Beskrivning...</p>            </div>            <form [formGroup]="userForm">                <div class="card-body">                    <section>                        <div class="col-md-12 px-1">                            <div class="form-group editable card-form">                                <label>Namn</label>                                <p [hidden]="saveButton1">{{user.name}}</p>                                <input id="name" formControlName="name" [hidden]="!saveButton1" type="text" class="form-control" placeholder="Ditt namn" [(ngModel)]="user.name" value="{{user.name}}" required>                                <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">                                    <div *ngIf="name.errors.required">                                        Name is required.                                    </div>                                    <div *ngIf="name.errors.minlength">                                        Name must be at least 4 characters long.                                    </div>                                </div>                                <label>Email</label>                                <p [hidden]="saveButton1">{{user.email}}</p>                                <input id="email" formControlName="email" [hidden]="!saveButton1" type="text" class="form-control" placeholder="Email" [(ngModel)]="user.email" value="{{user.email}}" required>                                <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">                                    <div *ngIf="email.errors.required">                                        Email is required.                                    </div>                                    <div *ngIf="email.errors.email">                                        Email must be a valid email address.                                    </div>                                </div>                                                                <label>Telefon</label>                                <p [hidden]="saveButton1">{{user.phone}}</p>                                <input id="phone" formControlName="phone" [hidden]="!saveButton1" type="text" class="form-control" placeholder="Telefon" [(ngModel)]="user.phone" value="{{user.phone}}" required>                                <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">                                    <div *ngIf="phone.errors.required">                                        Phone number is required.                                    </div>                                    <div *ngIf="phone.errors.phoneError">                                        Invalid phone number.                                    </div>                                </div>                            </div>                                                    </div>                    </section>                        </div>                                </form>                                <div class="card-footer update ml-auto mr-auto btn-on-card">                    <button type="submit" class="btn btn-info  btn-round" (click)="onSave(saveButton1)"  >                        <i class="nc-icon circle-icon nc-ruler-pencil"></i>                        <span [hidden]="saveButton1">Redigera</span>                        <span [hidden]="!saveButton1">Spara</span>                    </button>                </div>        </div>    </div></div><!-- <label>    Name:    <input type="text" [formControl]="nameControl">  </label> --></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'Page2Component', 'selector': 'page2'},{'name': 'PageComponent', 'selector': 'page'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CardFormComponent'};

@@ -134,7 +134,7 @@
                                 <a href="#dataService">dataService</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Public</span>
                                 <a href="#isCollapsed">isCollapsed</a>
                             </li>
                             <li>
@@ -504,7 +504,7 @@
                         <a name="isCollapsed"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Private</span>
+                                <span class="modifier">Public</span>
                             isCollapsed</b>
                             <a href="#isCollapsed"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -732,23 +732,23 @@ export class HeaderComponent implements OnInit{
     location: Location;
     private nativeElement: Node;
     private toggleButton;
-    private isCollapsed &#x3D; true;
+    public isCollapsed &#x3D; true;
     private test;
-    
+
     public  &#x3D; true;
     @ViewChild(&quot;header-cmp&quot;, {static: false}) button;
-    
+
     /**
      * Constructor to setup basic locaiton and element variables
      * @input
-     * @output 
+     * @output
      * @author Alexander Anserud &lt;alean378@student.liu.se&gt;
      */
-    constructor(location:Location, private renderer : Renderer, private element : ElementRef, private router: Router, public dataService: CaseDataService) 
+    constructor(location:Location, private renderer : Renderer, private element : ElementRef, private router: Router, public dataService: CaseDataService)
     {
         this.location &#x3D; location;
         this.nativeElement &#x3D; element.nativeElement;
-  
+
 
 
     }

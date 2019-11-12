@@ -179,9 +179,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Patient.html" data-type="entity-link">Patient</a>
                             </li>
                             <li class="link">
-                                <a href="classes/PdFreeAngularcliPage.html" data-type="entity-link">PdFreeAngularcliPage</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/User.html" data-type="entity-link">User</a>
                             </li>
                         </ul>

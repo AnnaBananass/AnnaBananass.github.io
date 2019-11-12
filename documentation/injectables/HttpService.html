@@ -46,9 +46,6 @@
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
         <li >
-            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
-        </li>
-        <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
@@ -192,14 +189,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/app/shared/http.service.ts:69</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/shared/http.service.ts:85</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Create a folder named as the case number in FileCloud server.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -209,6 +208,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -223,6 +223,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>A case number which is the name of the folder to be created.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -234,7 +238,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Nothing is returned.</p>
+
                     </div>
                 </td>
             </tr>
@@ -262,14 +267,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/app/shared/http.service.ts:45</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/shared/http.service.ts:55</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Upload a file to the specific path in FileCloud server.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -279,6 +286,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -293,6 +301,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The file that needs to be uploaded.</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>uploadPath</td>
@@ -305,6 +317,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The path where to upload the file in FileCloud server.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -316,7 +332,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Nothing is returned.</p>
+
                     </div>
                 </td>
             </tr>
@@ -344,14 +361,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/shared/http.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/shared/http.service.ts:26</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>User login the FileCloud server.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -442,10 +461,6 @@
 
     </div>
 
-    <div class="tab-pane fade " id="c-readme">
-        <p><h1 id="httpservice">HTTPService</h1>
-</p>
-    </div>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
@@ -470,6 +485,9 @@ export class HttpService {
   constructor(private http: HttpClient) {
   }
 
+  /**
+   * User login the FileCloud server.
+   */
   userLogin() {
     const req &#x3D; this.url + &#x27;/core/loginguest&#x27;
     const headers &#x3D; new HttpHeaders({
@@ -492,6 +510,13 @@ export class HttpService {
     })
   }
 
+  /**
+   * Upload a file to the specific path in FileCloud server.
+   * @param fileToUpload The file that needs to be uploaded.
+   * @param uploadPath The path where to upload the file in FileCloud server.
+   * 
+   * @returns Nothing is returned.
+   */
   postFile(fileToUpload: File, uploadPath: string) {
     const appname &#x3D; &quot;Chrome/56.0.2924.87&quot;;
     // const endpoint &#x3D; this.url + &#x27;/core/upload&#x27; + &#x27;?appname&#x3D;&#x27; + appname + &#x27;&amp;path&#x3D;&#x27; + uploadPath + &#x27;&amp;offset&#x3D;0&amp;complete&#x3D;1&amp;filename&#x3D;&#x27; + fileToUpload.name;
@@ -516,6 +541,12 @@ export class HttpService {
     })
   }
 
+  /**
+   * Create a folder named as the case number in FileCloud server.
+   * @param caseNumber A case number which is the name of the folder to be created.
+   * 
+   * @returns Nothing is returned.
+   */
   createFolder(caseNumber: string) { 
 
     // const req &#x3D; &#x27;https://company3.filecloudonline.com&#x27; + &#x27;/app/explorer/createfolder&#x27;

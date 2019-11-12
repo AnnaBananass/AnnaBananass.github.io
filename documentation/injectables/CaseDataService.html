@@ -62,6 +62,14 @@
             <code>src/app/shared/case-data.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service for storing and sharing 
+case data between components</p>
+
+            </p>
 
 
 
@@ -118,10 +126,17 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/case-data.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/case-data.service.ts:20</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates a instance of CaseDataService
+and sets caseData to new Case</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -153,17 +168,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/shared/case-data.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/shared/case-data.service.ts:34</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Gets the current data for the case</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The case data</p>
 
                     </div>
                 </td>
@@ -196,10 +219,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/case-data.service.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/case-data.service.ts:20</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The case data</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -209,6 +238,7 @@
 
     <div class="tab-pane fade " id="c-readme">
         <p><h1 id="casedataservice">CaseDataService</h1>
+<p>Here you can write a description of the case data service....</p>
 </p>
     </div>
 
@@ -216,27 +246,35 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { Case } from &#x27;../models/case&#x27;;
 
-
-
+/**
+ * Service for storing and sharing 
+ * case data between components
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 
 export class CaseDataService {
 
+  /** The case data*/
   caseData: Case;
 
-
+  /**
+   * Creates a instance of CaseDataService
+   * and sets caseData to new Case
+   */
   constructor() {
-        this.caseData &#x3D; new Case();
-       
+        this.caseData &#x3D; new Case();    
   }
 
+  /**
+  * Gets the current data for the case
+  * @returns The case data
+  */
   getCase() {
     return this.caseData;
   }
-
-
+ 
 }
 
 
