@@ -242,7 +242,25 @@ export class ConfirmationComponent implements OnInit {
  * @version 1.0
  * @author Alexander Anserud &lt;alean378@student.liu.se&gt;
 --&gt;
-&lt;app-card-form&gt;&lt;/app-card-form&gt;</code></pre>
+&lt;app-card-confirmation&gt;&lt;/app-card-confirmation&gt;
+
+&lt;div class&#x3D;&quot;row&quot;&gt;
+
+        &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+            &lt;a [routerLink]&#x3D;&quot;&#x27;/frontpage&#x27;&quot;&gt;
+                &lt;button type&#x3D;&quot;Startsida&quot; class&#x3D;&quot;btn btn-info  btn-round&quot; style&#x3D;&quot;float: left;&quot;&gt;
+                    &lt;span [hidden]&#x3D;&quot;frontpageButton&quot;&gt;Startsida&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/a&gt;
+    
+            &lt;a [routerLink]&#x3D;&quot;&#x27;/confirmation&#x27;&quot;&gt;
+                &lt;button type&#x3D;&quot;KompletteraÄrende&quot; class&#x3D;&quot;btn btn-info  btn-round&quot; style&#x3D;&quot;float: right;&quot; (click)&#x3D;&quot;startUpload()&quot;&gt;
+                    &lt;span [hidden]&#x3D;&quot;sendCaseButton&quot;&gt;Komplettera Ärende&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        
+    &lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -277,8 +295,8 @@ export class ConfirmationComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--  * Confirmation-page View File * @version 1.0 * @author Alexander Anserud <alean378@student.liu.se>--><app-card-form></app-card-form></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'Page2Component', 'selector': 'page2'},{'name': 'PageComponent', 'selector': 'page'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
+        var COMPONENT_TEMPLATE = '<div><!--  * Confirmation-page View File * @version 1.0 * @author Alexander Anserud <alean378@student.liu.se>--><app-card-confirmation></app-card-confirmation><div class="row">        <div class="col-md-12">            <a [routerLink]="\'/frontpage\'">                <button type="Startsida" class="btn btn-info  btn-round" style="float: left;">                    <span [hidden]="frontpageButton">Startsida</span>                </button>            </a>                <a [routerLink]="\'/confirmation\'">                <button type="KompletteraÄrende" class="btn btn-info  btn-round" style="float: right;" (click)="startUpload()">                    <span [hidden]="sendCaseButton">Komplettera Ärende</span>                </button>            </a>        </div>            </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardConfirmationComponent', 'selector': 'app-card-confirmation'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardFormFetchCaseComponent', 'selector': 'app-card-form-fetch-case'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardTableComponent', 'selector': 'app-card-table'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'Page2Component', 'selector': 'page2'},{'name': 'PageComponent', 'selector': 'page'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ConfirmationComponent'};
 </script>
