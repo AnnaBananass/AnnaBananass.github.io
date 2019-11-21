@@ -46,6 +46,9 @@
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
         <li >
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
+        </li>
+        <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
@@ -466,6 +469,10 @@
 
     </div>
 
+    <div class="tab-pane fade " id="c-readme">
+        <p><h1 id="uploadservice">UploadService</h1>
+</p>
+    </div>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
@@ -491,10 +498,8 @@ export class UploadService {
 
     startUpload() {
     this.caseNr &#x3D; this.caseNrService.getCaseNr(this.case.user.phone);
-    this.dataService.getCase().caseNr &#x3D; +this.caseNr;
+    this.dataService.getCase().caseNr &#x3D; this.caseNr;
     this.uploadPath &#x3D; this.caseNr;
-
-    console.log(this.caseNr);
 
     this.generateYML();
 
@@ -503,7 +508,9 @@ export class UploadService {
     this.httpService.createFolder(this.uploadPath);
     //This should be looped once several files are stored.
     this.httpService.postFile(this.ymlFile, this.uploadPath);
-    this.httpService.postFile(this.case.images[0].file, this.uploadPath);
+    for (var image of this.case.images) {
+      this.httpService.postFile(image.file, this.uploadPath);
+    }
   }
 
   realUpload() {
