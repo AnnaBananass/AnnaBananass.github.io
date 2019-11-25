@@ -101,6 +101,9 @@ case data between components</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#clearUserData">clearUserData</a>
+                            </li>
+                            <li>
                                 <a href="#getCase">getCase</a>
                             </li>
                         </ul>
@@ -146,6 +149,48 @@ and sets caseData to new Case</p>
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearUserData"></a>
+                    <span class="name">
+                        <b>
+                            clearUserData
+                        </b>
+                        <a href="#clearUserData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearUserData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/shared/case-data.service.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Overwrites the data the user has specified
+in front and summary page </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -275,6 +320,18 @@ export class CaseDataService {
     return this.caseData;
   }
  
+
+  /**
+   * Overwrites the data the user has specified
+   * in front and summary page 
+   */
+  clearUserData(){
+    this.caseData.user.name &#x3D; &quot;&quot;;
+    this.caseData.user.email &#x3D; &quot;&quot;;
+    this.caseData.user.phone &#x3D; &quot;&quot;;
+  
+    //TODO CLEAR IMAGE ARRAY
+  }
 }
 
 

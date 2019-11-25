@@ -233,6 +233,7 @@ import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 import { ToastrModule } from &quot;ngx-toastr&quot;;
 import { LightboxModule } from &#x27;ngx-lightbox&#x27;;
+import { MatIconModule } from &quot;@angular/material/icon&quot;;
 
 /* Import modules */
 import { FooterModule } from &#x27;./layouts/footer/footer.module&#x27;;
@@ -254,6 +255,7 @@ import { HttpClientModule, HttpClientJsonpModule } from &#x27;@angular/common/ht
   imports: [
     HttpClientModule,
     HttpClientJsonpModule,
+    MatIconModule,
     BrowserAnimationsModule,
     LightboxModule,
     RouterModule.forRoot(AppRoutes,{
