@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>FooterComponent</li>
+  <li>PageHeaderComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -49,6 +49,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -58,11 +61,17 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/layouts/footer/footer.component.ts</code>
+    <code>src/app/shared/page-header/page-header.component.ts</code>
 </p>
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -76,25 +85,25 @@
 
 
 
-            <tr>
-                <td class="col-md-3">moduleId</td>
-                <td class="col-md-9"><code>module.id</code></td>
-            </tr>
 
 
 
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>footer-cmp</code></td>
+                <td class="col-md-9"><code>app-page-header</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./page-header.component.scss</code></td>
+            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>footer.component.html</code></td>
+                <td class="col-md-9"><code>./page-header.component.html</code></td>
             </tr>
 
 
@@ -128,6 +137,20 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#pageHeader">pageHeader</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -136,8 +159,49 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/page-header/page-header.component.ts:9</a></div>
+                            </td>
+                        </tr>
 
+            </tbody>
+        </table>
+</section>
 
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pageHeader"></a>
+                        <b>pageHeader</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/page-header/page-header.component.ts:9</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -168,8 +232,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/layouts/footer/footer.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/shared/page-header/page-header.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -191,38 +255,42 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, HostBinding } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &quot;@angular/core&quot;;
 
-/* Component metadata  */
 @Component({
-    moduleId: module.id,
-    selector: &#x27;footer-cmp&#x27;,
-    templateUrl: &#x27;footer.component.html&#x27;
+  selector: &quot;app-page-header&quot;,
+  templateUrl: &quot;./page-header.component.html&quot;,
+  styleUrls: [&quot;./page-header.component.scss&quot;]
 })
+export class PageHeaderComponent implements OnInit {
+  @Input() pageHeader: string;
 
-/* Component Class Holder */
-export class FooterComponent{
-     ngOnInit() { };
+  constructor() {
+    this.pageHeader &#x3D; &quot;Hello World&quot;;
+  }
+
+  ngOnInit() {}
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- 3. Footer Start  --&gt;
-&lt;footer class&#x3D;&quot;footer&quot;&gt;
-    &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
-         &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;Brännskador &lt;br/&gt; Meny&lt;/div&gt;
-        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
-                Brännskador är en webapplikation för svenska sjukvården att enkel men säkert skicka bilder för skundär expertbedömning. &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/footer&gt;
-
-
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-center mb-4&quot;&gt;
+      {{ pageHeader }}
+    &lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./page-header.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -249,10 +317,10 @@ export class FooterComponent{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- 3. Footer Start  --><footer class="footer">    <div class="container-fluid">         <div class="row">        <div class="col-md-6">Brännskador <br/> Meny</div>        <div class="col-md-6">                Brännskador är en webapplikation för svenska sjukvården att enkel men säkert skicka bilder för skundär expertbedömning. </div>        </div>    </div></footer></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-md-12">    <h2 class="text-center mb-4">      {{ pageHeader }}    </h2>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardCaseNumber', 'selector': 'app-card-case-number'},{'name': 'CardConfirmationComponent', 'selector': 'app-card-confirmation'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardFormFetchCaseComponent', 'selector': 'app-card-form-fetch-case'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardPatientDataComponent', 'selector': 'app-card-patient-data'},{'name': 'CardTableComponent', 'selector': 'app-card-table'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'EditCaseComponent', 'selector': 'edit'},{'name': 'FetchcaseComponent', 'selector': 'app-fetchcase'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'Page2Component', 'selector': 'page2'},{'name': 'PageComponent', 'selector': 'page'},{'name': 'PageHeaderComponent', 'selector': 'app-page-header'},{'name': 'PopupComponent', 'selector': 'app-popup'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
+    var ACTUAL_COMPONENT = {'name': 'PageHeaderComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -287,7 +355,7 @@ export class FooterComponent{
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'FooterComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'PageHeaderComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

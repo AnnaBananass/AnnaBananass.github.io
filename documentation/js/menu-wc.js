@@ -55,13 +55,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-75b76da9626ee1d45fac0053f982f762"' : 'data-target="#xs-components-links-module-AppModule-75b76da9626ee1d45fac0053f982f762"' }>
+                                            'data-target="#components-links-module-AppModule-70c11d98fb718858fd91b192c9410bc3"' : 'data-target="#xs-components-links-module-AppModule-70c11d98fb718858fd91b192c9410bc3"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-75b76da9626ee1d45fac0053f982f762"' :
-                                            'id="xs-components-links-module-AppModule-75b76da9626ee1d45fac0053f982f762"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-70c11d98fb718858fd91b192c9410bc3"' :
+                                            'id="xs-components-links-module-AppModule-70c11d98fb718858fd91b192c9410bc3"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -77,13 +77,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ContentModule.html" data-type="entity-link">ContentModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-ContentModule-62e6f002b6b737343832e9aec6378fc0"' : 'data-target="#xs-components-links-module-ContentModule-62e6f002b6b737343832e9aec6378fc0"' }>
+                                            'data-target="#components-links-module-ContentModule-696698d333eefa468654ec61e85ad511"' : 'data-target="#xs-components-links-module-ContentModule-696698d333eefa468654ec61e85ad511"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ContentModule-62e6f002b6b737343832e9aec6378fc0"' :
-                                            'id="xs-components-links-module-ContentModule-62e6f002b6b737343832e9aec6378fc0"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ContentModule-696698d333eefa468654ec61e85ad511"' :
+                                            'id="xs-components-links-module-ContentModule-696698d333eefa468654ec61e85ad511"' }>
                                             <li class="link">
                                                 <a href="components/CardConfirmationComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">CardConfirmationComponent</a>
@@ -139,6 +139,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/PageComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">PageComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/PageHeaderComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PageHeaderComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/PopupComponent.html"

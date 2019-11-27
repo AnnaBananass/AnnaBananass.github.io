@@ -108,6 +108,12 @@
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates a instance of CaseNrService.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -139,14 +145,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="10"
-                            class="link-to-prism">src/app/shared/case-nr.service.ts:10</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/shared/case-nr.service.ts:20</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Computes the case number from a telephone number and the current time stamp.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -156,6 +164,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -170,6 +179,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>A 10 digit telephone number to compute the case number for.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -181,7 +194,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>The computed 8 digit case number as a string.</p>
+
                     </div>
                 </td>
             </tr>
@@ -204,16 +218,26 @@
 })
 export class CaseNrService {
 
+  /**
+   * Creates a instance of CaseNrService.
+   */
   constructor() { }
 
+
+  /**
+   * Computes the case number from a telephone number and the current time stamp.
+   * @param {string} teleNum A 10 digit telephone number to compute the case number for.
+   *
+   * @returns The computed 8 digit case number as a string.
+   */
   getCaseNr(teleNum:string):string {
     var dateNow &#x3D; new Date();
     var timeStamp &#x3D; String(dateNow.getTime()).substr(0,10)
     let id &#x3D; Number(timeStamp.substr(2,12) +  teleNum.substr(4,6))
     let dict64:string[] &#x3D; [&#x27;0&#x27;,&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;,&#x27;4&#x27;,&#x27;5&#x27;,&#x27;6&#x27;,&#x27;7&#x27;,&#x27;8&#x27;,&#x27;9&#x27;,
-                &#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,&#x27;d&#x27;,&#x27;e&#x27;,&#x27;f&#x27;,&#x27;g&#x27;,&#x27;h&#x27;,&#x27;i&#x27;,&#x27;j&#x27;,&#x27;k&#x27;,&#x27;l&#x27;,&#x27;m&#x27;,&#x27;n&#x27;,&#x27;o&#x27;,&#x27;p&#x27;,&#x27;q&#x27;,&#x27;r&#x27;,&#x27;s&#x27;,&#x27;t&#x27;,&#x27;u&#x27;,&#x27;v&#x27;,&#x27;w&#x27;,&#x27;x&#x27;,&#x27;y&#x27;,&#x27;z&#x27;,
-                &#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;,&#x27;D&#x27;,&#x27;E&#x27;,&#x27;F&#x27;,&#x27;G&#x27;,&#x27;H&#x27;,&#x27;I&#x27;,&#x27;J&#x27;,&#x27;K&#x27;,&#x27;L&#x27;,&#x27;M&#x27;,&#x27;N&#x27;,&#x27;O&#x27;,&#x27;P&#x27;,&#x27;Q&#x27;,&#x27;R&#x27;,&#x27;S&#x27;,&#x27;T&#x27;,&#x27;U&#x27;,&#x27;V&#x27;,&#x27;W&#x27;,&#x27;X&#x27;,&#x27;Y&#x27;,&#x27;Z&#x27;,
-                &#x27;-&#x27;,&#x27;+&#x27;]
+      &#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,&#x27;d&#x27;,&#x27;e&#x27;,&#x27;f&#x27;,&#x27;g&#x27;,&#x27;h&#x27;,&#x27;i&#x27;,&#x27;j&#x27;,&#x27;k&#x27;,&#x27;l&#x27;,&#x27;m&#x27;,&#x27;n&#x27;,&#x27;o&#x27;,&#x27;p&#x27;,&#x27;q&#x27;,&#x27;r&#x27;,&#x27;s&#x27;,&#x27;t&#x27;,&#x27;u&#x27;,&#x27;v&#x27;,&#x27;w&#x27;,&#x27;x&#x27;,&#x27;y&#x27;,&#x27;z&#x27;,
+      &#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;,&#x27;D&#x27;,&#x27;E&#x27;,&#x27;F&#x27;,&#x27;G&#x27;,&#x27;H&#x27;,&#x27;I&#x27;,&#x27;J&#x27;,&#x27;K&#x27;,&#x27;L&#x27;,&#x27;M&#x27;,&#x27;N&#x27;,&#x27;O&#x27;,&#x27;P&#x27;,&#x27;Q&#x27;,&#x27;R&#x27;,&#x27;S&#x27;,&#x27;T&#x27;,&#x27;U&#x27;,&#x27;V&#x27;,&#x27;W&#x27;,&#x27;X&#x27;,&#x27;Y&#x27;,&#x27;Z&#x27;,
+      &#x27;-&#x27;,&#x27;+&#x27;]
     var uuid:string &#x3D; &#x27;&#x27;
     let last &#x3D; 0
 

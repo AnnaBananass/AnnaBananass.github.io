@@ -402,8 +402,8 @@ Loads images if there are any stored in the Case</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:113</a></div>
                 </td>
             </tr>
 
@@ -445,8 +445,8 @@ The method also adds the image to the Lightbox gallery so they can be enlarged</
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:160</a></div>
                 </td>
             </tr>
 
@@ -517,8 +517,8 @@ The method also adds the image to the Lightbox gallery so they can be enlarged</
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:134</a></div>
                 </td>
             </tr>
 
@@ -561,8 +561,8 @@ remaining images correctly.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="159"
-                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:159</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:164</a></div>
                 </td>
             </tr>
 
@@ -600,8 +600,8 @@ remaining images correctly.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:102</a></div>
                 </td>
             </tr>
 
@@ -641,8 +641,8 @@ remaining images correctly.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/shared/cards/card-image/card-image.component.ts:88</a></div>
                 </td>
             </tr>
 
@@ -1044,13 +1044,13 @@ export class CardImageComponent implements OnInit {
 saveImageToCase(event){
   //15728640 bytes &#x3D; 15mb
   if(event.target.files[0].size &gt; 15728640) {
-    alert(&quot;The size of the image exceeds the allowed limit of 4 megabytes.&quot;);
+    alert(&quot;Storleken på bilden får inte vara större än 15 MB.&quot;);
     return;
   }
 
-  // 209715.2 &#x3D; 0.2mb
-  if(event.target.files[0].size &lt; 209715.2) {
-    alert(&quot;The size of the images must exceed 0.2 megabytes.&quot;);
+  // 102400 &#x3D; 0.1 MB
+  if(event.target.files[0].size &lt; 102400) {
+    alert(&quot;Storleken på bilden måste vara större än 0.1 MB.&quot;);
     return;
   }
 
@@ -1065,7 +1065,8 @@ saveImageToCase(event){
   this.dataService.getCase().images.push(this.image);
 
   // send to parent if image is uploaded
-  this.imageUploaded.emit(this.imagesAvailable)
+  this.imagesAvailable &#x3D; true;
+  this.imageUploaded.emit(this.imagesAvailable);
 
   this.addImage();
 }
@@ -1080,6 +1081,10 @@ removeImage(index: number){
   this._album.splice(index, 1);
   this.loadImages();
   this.imageCounter--;
+  if ( this.imageCounter &#x3D;&#x3D;&#x3D; -1){
+    this.imagesAvailable &#x3D; false;
+    this.imageUploaded.emit(this.imagesAvailable);
+  }
 }
 
 /**
@@ -1185,7 +1190,7 @@ This is an sample page to illustrate, each new &quot;page&quot; will have a new 
                     &lt;button id&#x3D;&quot;uploadPicture&quot; type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-info  btn-round&quot; [disabled]&#x3D;&quot;!isValid&quot; (click)&#x3D;&quot;openFileSelect()&quot; &gt;
                         &lt;i class&#x3D;&quot;nc-icon circle-icon nc-ruler-pencil&quot;&gt;&lt;/i&gt;
 
-                        &lt;input id&#x3D;&quot;inputUploadPicture&quot;style&#x3D;&quot;display: none&quot; type&#x3D;&quot;file&quot; accept&#x3D;&quot;.jpeg,.png,.tif&quot; (change)&#x3D;&quot;saveImageToCase($event)&quot; class&#x3D;&quot;upload-input&quot; #selectFile&gt;
+                        &lt;input id&#x3D;&quot;inputUploadPicture&quot;style&#x3D;&quot;display: none&quot; type&#x3D;&quot;file&quot; accept&#x3D;&quot;.jpg, .jpeg,.png,.tif&quot; (change)&#x3D;&quot;saveImageToCase($event)&quot; class&#x3D;&quot;upload-input&quot; #selectFile&gt;
                         &lt;span [hidden]&#x3D;&quot;!imagesAvailable&quot;&gt;{{Message}}&lt;/span&gt;
                         &lt;span [hidden]&#x3D;&quot;imagesAvailable&quot;&gt;{{Message}} &lt;/span&gt;
 
@@ -1270,8 +1275,8 @@ img:hover {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--This is an sample page to illustrate, each new "page" will have a new folder for instance "startsida", "upload image" and so on--><div class="row" style="margin-top:30px">    <div class="col-md-12">        <div class="card">            <div class="card-header">                <h5 class="card-title">Ladda upp bild</h5>                <p class="card-description">Beskrivning</p>            </div>            <div class="card-body">                <section>                    <div class="container">                        <div class="row">                          <div id="images" *ngFor="let image of imagePreview; let i=index;" class="col-sm image-preview">                            <img id="image{{i}}" [src]="image" (click)="enlargeImage(i)">                            <div id="x{{i}}" class="remove-button" (click)="removeImage(i)">X</div>                          </div>                        </div>                      </div>                </section>            </div>                <div class="update ml-auto mr-auto btn-on-card">                    <button id="uploadPicture" type="submit" class="btn btn-info  btn-round" [disabled]="!isValid" (click)="openFileSelect()" >                        <i class="nc-icon circle-icon nc-ruler-pencil"></i>                        <input id="inputUploadPicture"style="display: none" type="file" accept=".jpeg,.png,.tif" (change)="saveImageToCase($event)" class="upload-input" #selectFile>                        <span [hidden]="!imagesAvailable">{{Message}}</span>                        <span [hidden]="imagesAvailable">{{Message}} </span>                    </button>                </div>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardCaseNumber', 'selector': 'app-card-case-number'},{'name': 'CardConfirmationComponent', 'selector': 'app-card-confirmation'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardFormFetchCaseComponent', 'selector': 'app-card-form-fetch-case'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardPatientDataComponent', 'selector': 'app-card-patient-data'},{'name': 'CardTableComponent', 'selector': 'app-card-table'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'EditCaseComponent', 'selector': 'edit'},{'name': 'FetchcaseComponent', 'selector': 'app-fetchcase'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'Page2Component', 'selector': 'page2'},{'name': 'PageComponent', 'selector': 'page'},{'name': 'PopupComponent', 'selector': 'app-popup'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
+        var COMPONENT_TEMPLATE = '<div><!--This is an sample page to illustrate, each new "page" will have a new folder for instance "startsida", "upload image" and so on--><div class="row" style="margin-top:30px">    <div class="col-md-12">        <div class="card">            <div class="card-header">                <h5 class="card-title">Ladda upp bild</h5>                <p class="card-description">Beskrivning</p>            </div>            <div class="card-body">                <section>                    <div class="container">                        <div class="row">                          <div id="images" *ngFor="let image of imagePreview; let i=index;" class="col-sm image-preview">                            <img id="image{{i}}" [src]="image" (click)="enlargeImage(i)">                            <div id="x{{i}}" class="remove-button" (click)="removeImage(i)">X</div>                          </div>                        </div>                      </div>                </section>            </div>                <div class="update ml-auto mr-auto btn-on-card">                    <button id="uploadPicture" type="submit" class="btn btn-info  btn-round" [disabled]="!isValid" (click)="openFileSelect()" >                        <i class="nc-icon circle-icon nc-ruler-pencil"></i>                        <input id="inputUploadPicture"style="display: none" type="file" accept=".jpg, .jpeg,.png,.tif" (change)="saveImageToCase($event)" class="upload-input" #selectFile>                        <span [hidden]="!imagesAvailable">{{Message}}</span>                        <span [hidden]="imagesAvailable">{{Message}} </span>                    </button>                </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardCaseNumber', 'selector': 'app-card-case-number'},{'name': 'CardConfirmationComponent', 'selector': 'app-card-confirmation'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardFormFetchCaseComponent', 'selector': 'app-card-form-fetch-case'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardPatientDataComponent', 'selector': 'app-card-patient-data'},{'name': 'CardTableComponent', 'selector': 'app-card-table'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'EditCaseComponent', 'selector': 'edit'},{'name': 'FetchcaseComponent', 'selector': 'app-fetchcase'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'Page2Component', 'selector': 'page2'},{'name': 'PageComponent', 'selector': 'page'},{'name': 'PageHeaderComponent', 'selector': 'app-page-header'},{'name': 'PopupComponent', 'selector': 'app-popup'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CardImageComponent'};
 </script>
