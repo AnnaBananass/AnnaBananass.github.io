@@ -46,9 +46,6 @@
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
         </li>
         <li >
-            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
-        </li>
-        <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
@@ -88,6 +85,10 @@ case data between components</p>
                             <li>
                                 <a href="#caseData">caseData</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#removeImages">removeImages</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -101,10 +102,16 @@ case data between components</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#clearPatientFormData">clearPatientFormData</a>
+                            </li>
+                            <li>
                                 <a href="#clearUserData">clearUserData</a>
                             </li>
                             <li>
                                 <a href="#getCase">getCase</a>
+                            </li>
+                            <li>
+                                <a href="#getMethod">getMethod</a>
                             </li>
                         </ul>
                     </td>
@@ -135,8 +142,7 @@ case data between components</p>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Creates a instance of CaseDataService
-and sets caseData to new Case</p>
+                            <div class="io-description"><p>Sets caseData to new Case</p>
 </div>
                     </td>
                 </tr>
@@ -149,6 +155,47 @@ and sets caseData to new Case</p>
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearPatientFormData"></a>
+                    <span class="name">
+                        <b>
+                            clearPatientFormData
+                        </b>
+                        <a href="#clearPatientFormData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearPatientFormData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/shared/case-data.service.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clear the patient data form</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -171,16 +218,16 @@ and sets caseData to new Case</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/shared/case-data.service.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/shared/case-data.service.ts:57</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Overwrites the data the user has specified
-in front and summary page </p>
+                    <div class="io-description"><p>Clear data the user has specified
+in front and summary page  </p>
 </div>
 
                     <div class="io-description">
@@ -213,8 +260,8 @@ in front and summary page </p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/shared/case-data.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/shared/case-data.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -233,6 +280,79 @@ in front and summary page </p>
                     <div class="io-description">
                         <p>The case data</p>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMethod"></a>
+                    <span class="name">
+                        <b>
+                            getMethod
+                        </b>
+                        <a href="#getMethod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMethod(fn: () => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/shared/case-data.service.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>method for fetching and setting the clear images method from card-image
+to removeImages</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fn</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -277,15 +397,44 @@ in front and summary page </p>
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeImages"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            removeImages</b>
+                            <a href="#removeImages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/case-data.service.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Method that will be used to clear images.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
 </section>
 
     </div>
 
-    <div class="tab-pane fade " id="c-readme">
-        <p><h1 id="casedataservice">CaseDataService</h1>
-<p>Here you can write a description of the case data service....</p>
-</p>
-    </div>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
@@ -305,8 +454,7 @@ export class CaseDataService {
   caseData: Case;
 
   /**
-   * Creates a instance of CaseDataService
-   * and sets caseData to new Case
+   * Sets caseData to new Case
    */
   constructor() {
         this.caseData &#x3D; new Case();    
@@ -320,18 +468,65 @@ export class CaseDataService {
     return this.caseData;
   }
  
+/**
+ * Method that will be used to clear images.
+ */
+  private removeImages: () &#x3D;&gt; void;
+
+/**
+ * method for fetching and setting the clear images method from card-image
+ * to removeImages
+ */
+getMethod(fn: () &#x3D;&gt; void) {
+
+  this.removeImages &#x3D; fn;
+
+}
+
 
   /**
-   * Overwrites the data the user has specified
-   * in front and summary page 
+   * Clear data the user has specified
+   * in front and summary page  
    */
   clearUserData(){
     this.caseData.user.name &#x3D; &quot;&quot;;
     this.caseData.user.email &#x3D; &quot;&quot;;
     this.caseData.user.phone &#x3D; &quot;&quot;;
+    this.removeImages();
+    
 
-    //TODO CLEAR IMAGE ARRAY
+    
   }
+
+  /**
+   * Clear the patient data form
+   */
+  clearPatientFormData() {
+    this.caseData.dateofArrival &#x3D; new Date();
+    this.caseData.hasSavedDate &#x3D; false;
+    this.caseData.patientForm &#x3D; [
+      {question: &quot;Har patienten en kroppstemperatur &gt; 36° C?&quot;, storedValue: false, value: false},
+      {question: &quot;Är areriellt pO2 &gt; 10 kPa?&quot;, storedValue: false, value: false}, 
+      {question: &quot;Är systoliskt blodtryck &gt; 90 mm HG?&quot;, storedValue: false, value: false}, 
+      {question: &quot;Har traumaröntgen eller andra undersökningar gjorts?&quot;, storedValue: false, value: false},
+      {question: &quot;Är prover tagna för etanol eller annan toxikologi?&quot;, storedValue: false, value: false},
+      {question: &quot;Är patienten vid medvetande?&quot;, storedValue: false, value: false},
+      {question: &quot;Om patienten är eller har varit medvetslös - har analys av COHb gjorts?&quot;, storedValue: false, value: false},
+      {question: &quot;Är patienten intuberad?&quot;, storedValue: false, value: false},
+      {question: &quot;Vilka läkemedel är pågående?&quot;, storedValue: false, value: false, noCheckBoxes: true, complementary: &quot;formAnswer&quot;, complementaryFormData: [&quot;&quot;, &quot;&quot;], ymlFormat: [&quot;Läkemedel: &quot;, &quot;&quot;]},
+      {question: &quot;Pågår vätskebehandling enligt Parklands formel?&quot;, storedValue: false, value: false},
+      {question: &quot;Finns uppgift på vikt och längd?&quot;, storedValue: false, value: false, complementary: &quot;formHeightWeight&quot;, complementaryFormData: [&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;], ymlFormat: [&quot;Längd: &quot;, &quot; cm: Vikt: &quot;, &quot;&quot;, &quot; kg&quot;]},
+      {question: &quot;Hur mycket vätska har infunderats innan avfärd?&quot;, storedValue: false, value: false, noCheckBoxes: true, complementary: &quot;formAnswer&quot;, complementaryFormData: [&quot;&quot;, &quot;&quot;], ymlFormat: [&quot;Mängd: &quot;, &quot;&quot;]},
+      {question: &quot;Hur stor totaldiures har patient haft till &quot;, storedValue: false, value: false, noCheckBoxes: true, complementary: &quot;totaldiuresForm&quot;, complementaryFormData: [&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;], ymlFormat: [&quot;klockan: &quot;, &quot;? Volym: &quot;, &quot;&quot;, &quot; ml&quot;]},
+      {question: &quot;Har patienten fått Tetanusvaccination?&quot;, storedValue: false, value: false},
+      {question: &quot;Är patienten bandaderad med salvkompressförband (t.ex Jelonet) eller torra, rena kompresser?&quot;, storedValue: false, value: false},
+      {question: &quot;Har brännskadade händer och huvud högläge?&quot;, storedValue: false, value: false},
+      {question: &quot;Har eskarotomi gjorts vid cirkulära skador efter samverkan med brännskadejour?&quot;, storedValue: false, value: false},
+      {question: &quot;Är köldskador polstrade?&quot;, storedValue: false, value: false}
+  ];
+  this.caseData.transportInfo &#x3D; &quot;&quot;;
+  this.caseData.timeofArrival &#x3D; [&quot;&quot;, &quot;&quot;];
+    }
 
 }
 

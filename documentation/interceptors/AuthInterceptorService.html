@@ -27,7 +27,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content interceptor">
                    <div class="content-data">
 
 
@@ -36,9 +36,10 @@
 
 
 
+
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li>CaseNrService</li>
+  <li>Interceptors</li>
+  <li>AuthInterceptorService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,16 +57,8 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/shared/case-nr.service.ts</code>
+            <code>src/app/shared/helper/auth-interceptor.service.ts</code>
         </p>
-
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>This service generates a case number.</p>
-
-            </p>
 
 
 
@@ -73,6 +66,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#authService">authService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -83,7 +91,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getCaseNr">getCaseNr</a>
+                                <a href="#intercept">intercept</a>
                             </li>
                         </ul>
                     </td>
@@ -103,15 +111,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(authService: <a href="../injectables/AuthAssistantService.html">AuthAssistantService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/case-nr.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/helper/auth-interceptor.service.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthAssistantService.html" target="_self" >AuthAssistantService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -125,34 +163,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getCaseNr"></a>
+                    <a name="intercept"></a>
                     <span class="name">
                         <b>
-                            getCaseNr
+                            intercept
                         </b>
-                        <a href="#getCaseNr"><span class="icon ion-ios-link"></span></a>
+                        <a href="#intercept"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getCaseNr(teleNum: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>intercept(req: HttpRequest<any>, next: <a href="https://angular.io/api/common/http/HttpHandler" target="_blank">HttpHandler</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/shared/case-nr.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/shared/helper/auth-interceptor.service.ts:16</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Computes the case number from a telephone number and the current time stamp.</p>
-</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -162,14 +198,13 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>teleNum</td>
+                                    <td>req</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <code>HttpRequest&lt;any&gt;</code>
                                     </td>
 
                                     <td>
@@ -177,10 +212,18 @@
                                     </td>
 
 
+                                </tr>
+                                <tr>
+                                    <td>next</td>
                                     <td>
-                                        <p>A 10 digit telephone number to compute the case number for.</p>
-
+                                                <code><a href="https://angular.io/api/common/http/HttpHandler" target="_blank" >HttpHandler</a></code>
                                     </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
                                 </tr>
                             </tbody>
                         </table>
@@ -188,76 +231,80 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;HttpEvent&lt;any&gt;&gt;</code>
 
                     </div>
                     <div class="io-description">
-                        <p>The computed 8 digit case number as a string.</p>
-
+                        
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="authService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            authService</b>
+                            <a href="#authService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/AuthAssistantService.html" target="_self" >AuthAssistantService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/helper/auth-interceptor.service.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from &#x27;@angular/common/http&#x27;;
+import {Observable} from &#x27;rxjs&#x27;;
 
-/**
- * This service generates a case number.
- */
+import { AuthAssistantService} from &#x27;../auth-assistant.service&#x27;;
+
 @Injectable({
-  providedIn: &#x27;root&#x27;
-})
-export class CaseNrService {
+    providedIn: &#x27;root&#x27;
+  })
 
-  constructor() { }
+export class AuthInterceptorService implements HttpInterceptor {
 
-
-  /**
-   * Computes the case number from a telephone number and the current time stamp.
-   * @param {string} teleNum A 10 digit telephone number to compute the case number for.
-   *
-   * @returns The computed 8 digit case number as a string.
-   */
-  getCaseNr(teleNum:string):string {
-    if (isNaN(Number(teleNum)))
-    {
-      return &quot;Uncorrect telephone number!&quot;;
-    }
-    var dateNow &#x3D; new Date();
-    var timeStamp &#x3D; String(dateNow.getTime()).substr(0,10)
-    let id &#x3D; Number(timeStamp.substr(2,12) +  teleNum.substr(4,6))
-    let dict64:string[] &#x3D; [&#x27;0&#x27;,&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;,&#x27;4&#x27;,&#x27;5&#x27;,&#x27;6&#x27;,&#x27;7&#x27;,&#x27;8&#x27;,&#x27;9&#x27;,
-      &#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,&#x27;d&#x27;,&#x27;e&#x27;,&#x27;f&#x27;,&#x27;g&#x27;,&#x27;h&#x27;,&#x27;i&#x27;,&#x27;j&#x27;,&#x27;k&#x27;,&#x27;l&#x27;,&#x27;m&#x27;,&#x27;n&#x27;,&#x27;o&#x27;,&#x27;p&#x27;,&#x27;q&#x27;,&#x27;r&#x27;,&#x27;s&#x27;,&#x27;t&#x27;,&#x27;u&#x27;,&#x27;v&#x27;,&#x27;w&#x27;,&#x27;x&#x27;,&#x27;y&#x27;,&#x27;z&#x27;,
-      &#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;,&#x27;D&#x27;,&#x27;E&#x27;,&#x27;F&#x27;,&#x27;G&#x27;,&#x27;H&#x27;,&#x27;I&#x27;,&#x27;J&#x27;,&#x27;K&#x27;,&#x27;L&#x27;,&#x27;M&#x27;,&#x27;N&#x27;,&#x27;O&#x27;,&#x27;P&#x27;,&#x27;Q&#x27;,&#x27;R&#x27;,&#x27;S&#x27;,&#x27;T&#x27;,&#x27;U&#x27;,&#x27;V&#x27;,&#x27;W&#x27;,&#x27;X&#x27;,&#x27;Y&#x27;,&#x27;Z&#x27;,
-      &#x27;-&#x27;,&#x27;+&#x27;]
-    var uuid:string &#x3D; &#x27;&#x27;
-    let last &#x3D; 0
-
-    while (id &gt; 0){
-      console.log(id)
-      last &#x3D; id % 64
-      uuid &#x3D; uuid.concat(String(dict64[last]))
-      id &#x3D; (id - last) / 64
-    }
-
-   if(uuid.length!&#x3D;8)
-    {
-      return &quot;Uncorrect telephone number!&quot;; 
-    }
-    return uuid
+  constructor(public authService: AuthAssistantService) {
   }
+
+  intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;any&gt;&gt; {
+        const authReq &#x3D; req.clone({withCredentials: true });
+        return next.handle(authReq);
+  }
+
 }
 </code></pre>
     </div>
-
 </div>
-
 
 
 
@@ -285,8 +332,8 @@ export class CaseNrService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'CaseNrService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interceptor';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthInterceptorService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

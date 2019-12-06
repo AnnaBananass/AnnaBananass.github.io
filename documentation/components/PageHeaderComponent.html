@@ -61,9 +61,16 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/page-header/page-header.component.ts</code>
+    <code>src/app/shared/cards/page-header/page-header.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>This card is used for page titles.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -170,7 +177,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/page-header/page-header.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/cards/page-header/page-header.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -196,9 +203,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/page-header/page-header.component.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/cards/page-header/page-header.component.ts:16</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The page title </p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -232,8 +245,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/shared/page-header/page-header.component.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/shared/cards/page-header/page-header.component.ts:19</a></div>
                 </td>
             </tr>
 
@@ -255,29 +268,38 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
 
+/**
+ * This card is used for page titles.
+ */
 @Component({
-  selector: &quot;app-page-header&quot;,
-  templateUrl: &quot;./page-header.component.html&quot;,
-  styleUrls: [&quot;./page-header.component.scss&quot;]
+  selector: &#x27;app-page-header&#x27;,
+  templateUrl: &#x27;./page-header.component.html&#x27;,
+  styleUrls: [&#x27;./page-header.component.scss&#x27;]
 })
 export class PageHeaderComponent implements OnInit {
-  @Input() pageHeader: string;
 
-  constructor() {
-    this.pageHeader &#x3D; &quot;Hello World&quot;;
+  /**
+   * The page title 
+   */
+  @Input() pageHeader: string;
+  constructor() { }
+
+  ngOnInit() {
   }
 
-  ngOnInit() {}
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot; class&#x3D;&quot;page-title&quot; style&#x3D;&quot;margin-top: -60px&quot;&gt;
   &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
-    &lt;h2 class&#x3D;&quot;text-center mb-4&quot;&gt;
+    &lt;h2
+      class&#x3D;&quot;text-center&quot;
+      style&#x3D;&quot;margin-bottom: 0px; font-size: 30px !important; padding-bottom: 0px&quot;
+    &gt;
       {{ pageHeader }}
     &lt;/h2&gt;
   &lt;/div&gt;
@@ -317,8 +339,8 @@ export class PageHeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-md-12">    <h2 class="text-center mb-4">      {{ pageHeader }}    </h2>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CardCaseNumber', 'selector': 'app-card-case-number'},{'name': 'CardConfirmationComponent', 'selector': 'app-card-confirmation'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardFormFetchCaseComponent', 'selector': 'app-card-form-fetch-case'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardPatientDataComponent', 'selector': 'app-card-patient-data'},{'name': 'CardTableComponent', 'selector': 'app-card-table'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'EditCaseComponent', 'selector': 'edit'},{'name': 'FetchcaseComponent', 'selector': 'app-fetchcase'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'Page2Component', 'selector': 'page2'},{'name': 'PageComponent', 'selector': 'page'},{'name': 'PageHeaderComponent', 'selector': 'app-page-header'},{'name': 'PopupComponent', 'selector': 'app-popup'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
+        var COMPONENT_TEMPLATE = '<div><div class="row" class="page-title" style="margin-top: -60px">  <div class="col-md-12">    <h2      class="text-center"      style="margin-bottom: 0px; font-size: 30px !important; padding-bottom: 0px"    >      {{ pageHeader }}    </h2>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AutMethodPopupComponent', 'selector': 'app-aut-method-popup'},{'name': 'CardCaseNumber', 'selector': 'app-card-case-number'},{'name': 'CardConfirmationComponent', 'selector': 'app-card-confirmation'},{'name': 'CardDefaultComponent', 'selector': 'app-card-default'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardFormFetchCaseComponent', 'selector': 'app-card-form-fetch-case'},{'name': 'CardImageComponent', 'selector': 'app-card-image'},{'name': 'CardTableComponent', 'selector': 'app-card-table'},{'name': 'CardTmplComponent', 'selector': 'app-card-tmpl'},{'name': 'ConfirmationComponent', 'selector': 'app-confirmation'},{'name': 'ContentComponent', 'selector': 'app-content'},{'name': 'EditCaseComponent', 'selector': 'edit'},{'name': 'FetchcaseComponent', 'selector': 'app-fetchcase'},{'name': 'FooterComponent', 'selector': 'footer-cmp'},{'name': 'FrontpageComponent', 'selector': 'frontpage'},{'name': 'HeaderComponent', 'selector': 'header-cmp'},{'name': 'PageHeaderComponent', 'selector': 'app-page-header'},{'name': 'PopupComponent', 'selector': 'app-popup'},{'name': 'SummaryComponent', 'selector': 'app-summary'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PageHeaderComponent'};
 </script>
