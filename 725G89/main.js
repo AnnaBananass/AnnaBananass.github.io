@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     console.log( "ready!" );
 
-    let pages = ["page0", "ar1page", "ar2page", "ar3page"];
+    let pages = ["omMig", "page0", "ar1page", "ar2page", "ar3page"];
 
     hideAndScroll();
     $("#page0").show();
@@ -18,6 +18,13 @@ $( document ).ready(function() {
     {
         hideAndScroll();
         $("#page0").show();
+        console.log( "byter!" );
+    });
+
+    $("#name").click(function() 
+    {
+        hideAndScroll();
+        $("#omMig").show();
         console.log( "byter!" );
     });
 
