@@ -99,28 +99,25 @@ body
 
 .smImg
 {
-  width: 250px;
-  min-width: 150px;
+  width: 10vw;
   height: auto;
 }
 .meImg
 {
-  width: 300px;
-  min-width: 200px;
+  width: 20vw;
   height: auto;
 }
 .laImg
 {
-  width: 400px;
-  min-width: 300px;
+  width: 30vw;
   height: auto;
 }
 .xlaImg
 {
-  width: 500px;
-  min-width: 400px;
+  width: 35vw;
   height: auto;
 }
+
 
 .linediv
 {
